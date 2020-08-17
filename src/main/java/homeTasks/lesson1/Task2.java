@@ -8,13 +8,16 @@ System.out.println, System.out.print можно использовать тол�
 
 public class Task2 {
 
-    public static void main(String[] args) {
+   public String nameMatrix(){
+       String result = "";
         String name = "Artur";
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 10; j++) {
-                System.out.print(name + " ");
+                result += name;
+                result += " ";
             }
-            System.out.println();
+        result += "\n";
         }
+        return result;
     }
 }

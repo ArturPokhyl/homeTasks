@@ -1,6 +1,6 @@
 package main.java.lesson3;
 
-class I_Comments {
+public class I_Comments {
     /**
      *
      * @param args

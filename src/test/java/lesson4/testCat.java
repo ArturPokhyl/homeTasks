@@ -2,7 +2,7 @@ package test.java.lesson4;
 
 import main.java.lesson4.Cat;
 
-class TestCat {
+public class TestCat {
     public static void main(String[] args) {
         Cat cat = new Cat("Barsik");
         int age = 105;

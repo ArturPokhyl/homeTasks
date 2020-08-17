@@ -1,6 +1,6 @@
 package main.java.lesson3;
 
-class E_Int_Long {
+public class E_Int_Long {
     public static void main(String[] args) {
         int a = 145465454;
         ///int aa = 1.5;

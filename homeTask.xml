@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="HomeWorkSuite">
+    <parameter name="expectedRowAmount" value="5"></parameter>
+    <parameter name="expectedNameInRowAmount" value="10"></parameter>
+    <test name="FirstTest">
+        <classes>
+            <class name="test.java.homeTasks.HW_Task2Test"></class>
+        </classes>
+    </test>
+</suite>

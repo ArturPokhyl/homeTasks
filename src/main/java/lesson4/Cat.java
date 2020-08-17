@@ -47,4 +47,15 @@ public class Cat {
     public static int getDefaultAge() {
         return 20;
     }
+
+    public String getMatrix(){
+        String result = "";
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                result += "* ";
+            }
+            result += "\n";
+        }
+        return result;
+    }
 }
