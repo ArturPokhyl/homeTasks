@@ -20,5 +20,7 @@ package main.java.homeTasks.lesson2;
  */
 
 public class Task1 {
-
+private int age;
+private String name;
+private String ageGroup;
 }
