@@ -16,7 +16,6 @@ public class HW_Task2Test {
         public void setUp(){
             matrix = new Task2();
             result = matrix.nameMatrix();
-    System.out.println(result);
 }
 
 @Parameters({"expectedRowAmount"})

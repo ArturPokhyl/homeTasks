@@ -17,9 +17,9 @@ public class HW_Task1Test {
         System.out.println("Actual Result " + actualResult + " = " + "Expected Result " + expectedResult);
     }
 
-@DataProvider(name = "dp")
-public Object[][] provider(){
-    return new Object[][]{
+    @DataProvider(name = "dp")
+    public Object[][] provider(){
+        return new Object[][]{
             {1, 5, 10, 1},
             {15, 5, 10, 5},
             {15, 5, 2, 2},
