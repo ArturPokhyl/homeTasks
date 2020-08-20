@@ -21,8 +21,7 @@ public class HomeTaskLesson7GetNumber {
         driver.get("https://rozetka.com.ua/");
         By numberLocator = By.xpath("//button[@class='header-phones__button']");
 
-        String phoneNumber = driver.findElement(numberLocator).getText();
-
+        String phoneNumber = driver.findElement(numberLocator).getText().replaceAll("[( )-]", "");
         System.out.println(phoneNumber);
         driver.quit();
 
