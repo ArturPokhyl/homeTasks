@@ -21,7 +21,6 @@ import static org.testng.Assert.assertEquals;
 
 public class Waits {
     WebDriver driver;
-    WebDriverWait wait1;
     WebDriverWait wait;
     By goodsListBy = By.cssSelector("[class='menu-categories menu-categories_type_main']");
     By wishBy = By.cssSelector("[class='header-actions__item header-actions__item_type_wish js-app-wishlist']");
