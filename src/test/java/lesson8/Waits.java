@@ -31,7 +31,7 @@ public class Waits {
     By errorMsgBy = By.cssSelector("[class^='error-message']");
     By requireTempPass = By.cssSelector("[class*='error-message'] [class*='link-dotted']");
 
-    @BeforeMethod
+   @BeforeMethod
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
