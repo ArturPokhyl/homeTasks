@@ -1,4 +1,4 @@
-package test.java.lesson4.homeTasks;
+package test.java.homeTasks;
 import  main.java.homeTasks.lesson1.Task1;
 
 

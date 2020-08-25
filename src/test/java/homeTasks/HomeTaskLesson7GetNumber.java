@@ -1,4 +1,4 @@
-package test.java.lesson4.homeTasks;
+package test.java.homeTasks;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
