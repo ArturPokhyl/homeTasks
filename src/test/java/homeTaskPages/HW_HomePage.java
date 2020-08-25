@@ -12,7 +12,7 @@ import java.util.List;
 public class HW_HomePage {
     WebDriver driver;
     WebDriverWait wait;
-    By searchField = By.xpath("//input[@class='search-form__input ng-pristine ng-valid ng-touched']");
+    By searchField = By.xpath("//input[@name='search']");
     By submitBtn = By.xpath("//button[@class = 'button button_color_green button_size_medium search-form__submit']");
     By searchResults = By.xpath("//li[@class=/catalog-grid__cell  catalog-grid__cell_type_slim']");
 
@@ -27,10 +27,11 @@ public class HW_HomePage {
     }
     public List<WebElement> searchResult(String searchWord) throws InterruptedException {
         Thread.sleep(2000);
-        //wait.until(ExpectedConditions.elementToBeClickable(searchField));
         driver.findElement(searchField).click();
         driver.findElement(searchField).sendKeys(searchWord);
         driver.findElement(submitBtn).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(searchResults));
         List<WebElement> searchResult = driver.findElements(searchResults);
         return searchResult;
     }

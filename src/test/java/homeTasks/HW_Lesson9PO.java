@@ -1,6 +1,7 @@
 package test.java.homeTasks;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
@@ -28,6 +29,7 @@ public class HW_Lesson9PO {
     public void iphoneTest() throws InterruptedException {
         hw_homePage.open().searchResult("iphone");
         Thread.sleep(5000);
+
     }
 
     @AfterMethod
