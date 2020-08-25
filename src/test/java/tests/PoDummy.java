@@ -56,7 +56,6 @@ public class PoDummy {
         @AfterMethod
         public void teadDown(){
             driver.quit();
-
         }
     }
 

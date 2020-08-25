@@ -2,7 +2,7 @@
 <suite name="FirstSuite">
     <test name="FirstTest">
         <classes>
-            <class name="test.java.homeTasks.HomeTaskLesson8Waits"/>
+            <class name="test.java.homeTasks.HW_Lesson8Waits"/>
         </classes>
     </test>
 </suite>

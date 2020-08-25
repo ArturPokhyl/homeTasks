@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.assertEquals;
 
-public class HomeTaskLesson8Waits {
+public class HW_Lesson8Waits {
     WebDriver driver;
     WebDriverWait wait;
     By loginLink = By.xpath("//a[@class='header-topline__user-link link-dashed']");

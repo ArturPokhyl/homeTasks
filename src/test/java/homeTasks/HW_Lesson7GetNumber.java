@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.concurrent.TimeUnit;
 
-public class HomeTaskLesson7GetNumber {
+public class HW_Lesson7GetNumber {
     public static void main(String[] args) {
 
     System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
