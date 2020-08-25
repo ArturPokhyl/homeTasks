@@ -4,7 +4,7 @@
     <parameter name="expectedNameInRowAmount" value="10"></parameter>
     <test name="FirstTest">
         <classes>
-            <class name="test.java.homeTasks.HW_Task2Test"></class>
+            <class name="test.java.lesson4.homeTasks.HW_Task2Test"></class>
         </classes>
     </test>
 </suite>

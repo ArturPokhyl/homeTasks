@@ -1,4 +1,4 @@
-package test.java.homeTasks;
+package test.java.lesson4.homeTasks;
 
 import main.java.homeTasks.lesson1.Task2;
 import org.testng.annotations.BeforeTest;
