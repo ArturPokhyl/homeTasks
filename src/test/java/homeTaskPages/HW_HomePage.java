@@ -14,7 +14,8 @@ public class HW_HomePage {
     WebDriverWait wait;
     By searchField = By.xpath("//input[@name='search']");
     By submitBtn = By.xpath("//button[@class = 'button button_color_green button_size_medium search-form__submit']");
-    By searchResults = By.xpath("//li[@class=/catalog-grid__cell  catalog-grid__cell_type_slim']");
+    By searchTab = By.xpath("//div[@class='goods-tile']");
+
 
     public HW_HomePage(WebDriver driver){
         this.driver = driver;
@@ -25,15 +26,20 @@ public class HW_HomePage {
         driver.get("https://rozetka.com.ua/");
         return this;
     }
-    public List<WebElement> searchResult(String searchWord) throws InterruptedException {
-        Thread.sleep(2000);
+    public HW_HomePage search(String searchWord) {
+        wait.until(ExpectedConditions.presenceOfElementLocated(searchField));
         driver.findElement(searchField).click();
         driver.findElement(searchField).sendKeys(searchWord);
         driver.findElement(submitBtn).click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(searchResults));
-        List<WebElement> searchResult = driver.findElements(searchResults);
-        return searchResult;
+        return this;
     }
+
+    public List<WebElement> getSearchResults() {
+        wait.until(ExpectedConditions.elementToBeClickable(searchTab));
+        List<WebElement> searchResults = driver.findElements(searchTab);
+        return searchResults;
+    }
+
+
 
 }

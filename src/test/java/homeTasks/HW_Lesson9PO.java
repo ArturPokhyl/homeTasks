@@ -6,10 +6,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import test.java.homeTaskPages.HW_HomePage;
-
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+import static org.testng.Assert.assertTrue;
+
 
 public class HW_Lesson9PO {
     WebDriver driver;
@@ -25,18 +28,27 @@ public class HW_Lesson9PO {
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.MILLISECONDS);
         hw_homePage = new HW_HomePage(driver);
     }
-    @Test
-    public void iphoneTest() throws InterruptedException {
-        hw_homePage.open().searchResult("iphone");
-        Thread.sleep(5000);
 
+    @Test(dataProvider = "SearchTextDataProvider")
+    public void searchTest(String searchText) {
+       hw_homePage.open().search(searchText);
+        List<WebElement> searchResults = hw_homePage.getSearchResults();
+        for (WebElement searchResult : searchResults) {
+            String searchresultText = searchResult.getText().toLowerCase();
+            assertTrue(searchresultText.contains(searchText));
+        }
     }
 
     @AfterMethod
     public void teadDown(){
         driver.quit();
     }
-
-
-
+    @DataProvider(name = "SearchTextDataProvider")
+    public Object[][] SearchTextDataProvider(){
+        return new Object[][]{
+                {"iphone"},
+                {"samsung"}
+        };
+    }
+        
 }
