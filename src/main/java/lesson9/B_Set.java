@@ -11,10 +11,10 @@ public class B_Set {
         set.add(2);
         set.add(3);
         set.add(3);
+
         for (Integer el: set) {
             System.out.println(el);
         }
-
 
     }
 }

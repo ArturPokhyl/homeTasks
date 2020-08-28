@@ -6,17 +6,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ContactPage {
+public class ContactPage extends BasePage {
     WebDriver driver;
-    WebDriverWait wait;
     By qaBtnBy = By.cssSelector("[class='m-top'] a[href$='/faq/']");
 
-    public ContactPage(WebDriver driver){
+    public ContactPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
-        wait = new WebDriverWait(driver, 10, 500);
     }
 
-    public ContactPage clickQa(){
+    @Override
+    public ContactPage open() {
+        driver.get("https://rozetka.com.ua/contacts/");
+        return this;
+    }
+
+    public ContactPage clickQa() {
         wait.until(ExpectedConditions.presenceOfElementLocated(qaBtnBy));
         WebElement qaBtn = driver.findElement(qaBtnBy);
         wait.until(ExpectedConditions.elementToBeClickable(qaBtnBy));

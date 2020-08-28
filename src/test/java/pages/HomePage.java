@@ -6,25 +6,25 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HomePage {
+public class HomePage extends BasePage {
     WebDriver driver;
-    WebDriverWait wait;
+
     By contactBtnBy = By.cssSelector("[class='header-topline__links'] a[href$='/contacts/']");
 
-    public HomePage(WebDriver driver){
+    public HomePage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
-        wait = new WebDriverWait(driver, 10, 500);
     }
 
-    public HomePage open(){
+    public HomePage open() {
         driver.get("https://rozetka.com.ua/");
         return this;
     }
 
-    public HomePage clickContacts(){
-        WebElement contactButton = driver.findElement(contactBtnBy);
+    public HomePage clickContacts() {
+        WebElement contactBtn = driver.findElement(contactBtnBy);
         wait.until(ExpectedConditions.elementToBeClickable(contactBtnBy));
-        contactButton.click();
+        contactBtn.click();
         return this;
     }
 }

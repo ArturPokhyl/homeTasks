@@ -11,7 +11,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
@@ -32,24 +31,22 @@ public class TestCollections {
     }
 
     @Test
-    public void test1(){
+    public void test1() {
         driver.get("https://rozetka.com.ua/");
-        List<WebElement> categories = driver.findElements(By.cssSelector("[class = 'menu-categories__link']"));
+        List<WebElement> categories = driver.findElements(By.cssSelector("[class='menu-categories__link']"));
         String expectedFontColor = "rgba(62, 119, 170, 1)";
         for (WebElement category: categories) {
             String actualFontColor = category.getCssValue("color");
-             assertEquals(actualFontColor,
-                     expectedFontColor,
-                     String.format("expected blue color for element '%s'",category.getText()));
-
+            assertEquals(
+                    actualFontColor,
+                    expectedFontColor,
+                    String.format("Expected blue font color for element '%s'", category.getText())
+            );
         }
-
-
     }
 
     @AfterMethod
-    public void teadDown(){
+    public void tearDown() {
         driver.quit();
-
     }
 }
