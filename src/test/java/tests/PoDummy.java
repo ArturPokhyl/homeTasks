@@ -26,7 +26,7 @@ public class PoDummy extends TestBaseSetup{
     QaPage qaPage;
 
     @BeforeMethod
-    public void setUp() {
+    public void pageFactory() {
         homePage = new HomePage(driver);
         contactPage = new ContactPage(driver);
         qaPage = new QaPage(driver);
@@ -34,6 +34,9 @@ public class PoDummy extends TestBaseSetup{
 
     @Test
     public void test1() {
+        homePage
+                .open()
+                .clickContacts();
         homePage
                 .open()
                 .clickContacts();

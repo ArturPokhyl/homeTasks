@@ -17,11 +17,13 @@ public class ContactPage extends BasePage {
 
     @Override
     public ContactPage open() {
+        System.out.println("Contact page was opened");
         driver.get("https://rozetka.com.ua/contacts/");
         return this;
     }
 
     public ContactPage clickQa() {
+        logger.info("Click QA");
         wait.until(ExpectedConditions.presenceOfElementLocated(qaBtnBy));
         WebElement qaBtn = driver.findElement(qaBtnBy);
         wait.until(ExpectedConditions.elementToBeClickable(qaBtnBy));
