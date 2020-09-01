@@ -1,4 +1,4 @@
-package test.java.homeTaskPages;
+package test.java.homeTasks;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,7 +9,6 @@ import org.testng.annotations.BeforeMethod;
 import java.util.concurrent.TimeUnit;
 
 public class HW_TestBaseSetup {
-
     WebDriver driver;
 
     @BeforeMethod

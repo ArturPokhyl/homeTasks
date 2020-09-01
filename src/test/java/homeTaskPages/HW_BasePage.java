@@ -8,11 +8,11 @@ import test.java.pages.BasePage;
 
 public abstract class HW_BasePage {
     protected WebDriverWait wait;
-    Logger logger = LogManager.getLogger(this.getClass().getName());
+    //Logger logger = LogManager.getLogger(this.getClass().getName());
 
     public HW_BasePage(WebDriver driver) {
         wait = new WebDriverWait(driver, 10, 500);
     }
 
-    /*public abstract HW_BasePage open();*/
+    public abstract HW_BasePage open();
 }

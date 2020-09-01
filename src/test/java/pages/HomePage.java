@@ -19,7 +19,7 @@ public class HomePage extends BasePage {
     }
 
     public HomePage open() {
-        System.out.println(1/0);
+        System.out.println();
         this.logger.trace("Trace");
         this.logger.debug("Debug");
         this.logger.info("Info");
