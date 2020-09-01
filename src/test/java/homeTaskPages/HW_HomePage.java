@@ -10,17 +10,18 @@ import test.java.pages.BasePage;
 
 import java.util.List;
 
-public class HW_HomePage {
+public class HW_HomePage extends HW_BasePage{
     WebDriver driver;
-    WebDriverWait wait;
+
     By searchField = By.xpath("//input[@name='search']");
     By submitBtn = By.xpath("//button[@class = 'button button_color_green button_size_medium search-form__submit']");
     By searchTab = By.xpath("//div[@class='goods-tile']");
 
 
     public HW_HomePage(WebDriver driver){
+        super(driver);
         this.driver = driver;
-        wait = new WebDriverWait(driver, 10, 500);
+
     }
 
     public HW_HomePage open(){
