@@ -40,7 +40,7 @@ public class HomePage extends BasePage {
 
     public HomePage clickContacts() {
         logger.info("Click contact page");
-        System.out.println(1/0);
+       // System.out.println(1/0);
         WebElement contactBtn = driver.findElement(contactBtnBy);
         wait.until(ExpectedConditions.elementToBeClickable(contactBtnBy));
         contactBtn.click();
