@@ -29,7 +29,9 @@ public class Screenshot {
                          + "\\screenshots"
                          + "\\" + result.getTestClass().getName().replace(".","\\")
                          + "\\" + result.getMethod().getConstructorOrMethod().getName()
+                         + "-"
                          + new Date().getTime()
+                         //+ result.getTestContext(). взять или имя из датапровайдера или результат теста
                          + ".png"));
       } catch (IOException e) {
          e.printStackTrace();

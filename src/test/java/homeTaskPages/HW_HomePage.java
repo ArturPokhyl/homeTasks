@@ -11,6 +11,7 @@ import test.java.pages.BasePage;
 import java.util.List;
 
 public class HW_HomePage extends HW_BasePage{
+
     WebDriver driver;
 
     By searchField = By.xpath("//input[@name='search']");

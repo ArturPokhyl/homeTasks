@@ -1,0 +1,7 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="FristSuite">
+    <test name="FirstTest">
+        <classes>
+            <class name="test.java.homeTasks.HW_lesson10"/>
+        </classes>
+    </test></suite>
