@@ -3,6 +3,7 @@ package test.java.homeTasks;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
@@ -21,8 +22,11 @@ public class HW_TestBaseSetup {
     public void setUp(ITestContext testContext) {
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
+        //FirefoxOptions options = new FirefoxOptions();
+
         options.addArguments("--disable-notifications");
        //driver = new ChromeDriver(options);
+
         try {
             driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
         } catch (MalformedURLException e) {

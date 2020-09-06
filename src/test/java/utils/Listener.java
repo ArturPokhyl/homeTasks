@@ -35,9 +35,9 @@ public class Listener implements ISuiteListener, ITestListener, IInvokedMethodLi
     public void onTestSuccess(ITestResult result) {
         ITestContext  testContext = result.getTestContext();
         WebDriver driver = (WebDriver) testContext.getAttribute("driver");
-        Screenshot screenshot = new Screenshot(driver);
+   /*     Screenshot screenshot = new Screenshot(driver);
         screenshot.makeScreenshot(result);
-
+*/
         System.out.println("success");
     }
 
