@@ -13,5 +13,5 @@ public abstract class BasePage {
         wait = new WebDriverWait(driver, 10, 500);
     }
 
-    public abstract BasePage open();
+    public abstract BasePage open() throws InterruptedException;
 }

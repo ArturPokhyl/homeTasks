@@ -8,12 +8,12 @@ public class Listener implements ISuiteListener, ITestListener, IInvokedMethodLi
 
     @Override
     public void beforeInvocation(IInvokedMethod iInvokedMethod, ITestResult iTestResult) {
-        System.out.println("Start invoke " + iInvokedMethod.getTestMethod().getMethodName());
+        //System.out.println("Start invoke " + iInvokedMethod.getTestMethod().getMethodName());
     }
 
     @Override
     public void afterInvocation(IInvokedMethod iInvokedMethod, ITestResult iTestResult) {
-        System.out.println("Stop invoke " + "Start invoke" + iInvokedMethod.getTestMethod().getMethodName());
+        //System.out.println("Stop invoke " + "Start invoke" + iInvokedMethod.getTestMethod().getMethodName());
     }
 
     @Override

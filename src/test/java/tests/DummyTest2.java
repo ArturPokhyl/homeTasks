@@ -23,7 +23,7 @@ public class DummyTest2 extends TestBaseSetup{
     }
 
     @Test
-    public void test1(){
+    public void test1() throws InterruptedException {
         homePage.open();
     }
 
