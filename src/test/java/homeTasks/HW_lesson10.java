@@ -9,6 +9,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import test.java.homeTaskPages.HW_NoteBooksPage;
 import test.java.utils.Screenshot;
+import test.java.utils.PropertyLoader;
 
 import java.util.List;
 
@@ -36,12 +37,12 @@ public class HW_lesson10 extends HW_TestBaseSetup {
             String searchresultText = searchResult.getText().toLowerCase();
             assertTrue(searchresultText.contains(producer.toLowerCase()));
         }
-        this.logger.trace("test result");
+        /*this.logger.trace("test result");
         this.logger.debug("test result");
         this.logger.info("test result");
         this.logger.warn("test result");
         this.logger.error("test result");
-        this.logger.fatal("test result");
+        this.logger.fatal("test result");*/
     }
     @DataProvider(name = "dp")
     public Object[][] dp() {

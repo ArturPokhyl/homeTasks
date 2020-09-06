@@ -35,8 +35,8 @@ public class Listener implements ISuiteListener, ITestListener, IInvokedMethodLi
     public void onTestSuccess(ITestResult result) {
         ITestContext  testContext = result.getTestContext();
         WebDriver driver = (WebDriver) testContext.getAttribute("driver");
-        Screenshot screenshot = new Screenshot(driver);
-        screenshot.makeScreenshot(result);
+        /*Screenshot screenshot = new Screenshot(driver);
+        screenshot.makeScreenshot(result);*/
 
         System.out.println("success");
     }
@@ -52,7 +52,7 @@ public class Listener implements ISuiteListener, ITestListener, IInvokedMethodLi
 
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
-        System.out.println("skipp");
+        //System.out.println("skipp");
     }
 
     @Override
@@ -62,11 +62,11 @@ public class Listener implements ISuiteListener, ITestListener, IInvokedMethodLi
 
     @Override
     public void onStart(ITestContext iTestContext) {
-        System.out.println("test Start");
+        //System.out.println("test Start");
     }
 
     @Override
     public void onFinish(ITestContext iTestContext) {
-        System.out.println("test Stop");
+        //System.out.println("test Stop");
     }
 }
