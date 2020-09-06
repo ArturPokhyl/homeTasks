@@ -27,7 +27,7 @@ public class HW_lesson10 extends HW_TestBaseSetup {
     }
 
 
-    @Test()
+    @Test
     public void producerFilterTest(String producer) {
         hw_noteBooksPage.open();
         hw_noteBooksPage.clickToProducer(producer);

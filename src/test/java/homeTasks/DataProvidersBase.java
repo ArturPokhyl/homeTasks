@@ -1,4 +1,4 @@
-package test.java.utils;
+package test.java.homeTasks;
 
 import org.testng.annotations.DataProvider;
 
@@ -49,7 +49,7 @@ public class DataProvidersBase {
     public Object[][] dp1() {
         return new Object[][]{
                 {"Acer"},
-                {"Apple"},
+                /*{"Apple"},
                 {"Asus"},
                 {"Dell"},
                 {"Dream Machines"},
@@ -83,7 +83,7 @@ public class DataProvidersBase {
                 {"Teclast"},
                 {"Toshiba"},
                 {"Vinga"},
-                {"Yepo"}
+                {"Yepo"}*/
         };
 
     }
