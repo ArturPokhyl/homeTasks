@@ -27,7 +27,7 @@ public class HW_lesson10 extends HW_TestBaseSetup {
     }
 
 
-    @Test(dataProvider = "dp")
+    @Test()
     public void producerFilterTest(String producer) {
         hw_noteBooksPage.open();
         hw_noteBooksPage.clickToProducer(producer);
@@ -44,46 +44,6 @@ public class HW_lesson10 extends HW_TestBaseSetup {
         this.logger.error("test result");
         this.logger.fatal("test result");*/
     }
-    @DataProvider(name = "dp")
-    public Object[][] dp() {
-        return new Object[][]{
-                {"Acer"},
-                {"Apple"},
-                {"Asus"},
-                {"Dell"},
-                {"Dream Machines"},
-                {"HP"},
-                {"Huawei"},
-                {"Lenovo"},
-                {"MSI"},
-                {"Microsoft"},
-                {"Razer"},
-                {"Xiaomi"},
-                {"Alien"},
-                {"Chuwi"},
-                {"Compaq"},
-                {"Digma"},
-                {"Durabook"},
-                {"Epic"},
-                {"Fujitsu"},
-                {"Fujitsu-siemens"},
-                {"Gigabyte"},
-                {"Google"},
-                {"Jumper"},
-                {"Mediacom"},
-                {"Medion"},
-                {"Mixzo"},
-                {"NuVision"},
-                {"Odys"},
-                {"Panasonic"},
-                {"Porsche Design"},
-                {"Prestigio"},
-                {"RCA"},
-                {"Teclast"},
-                {"Toshiba"},
-                {"Vinga"},
-                {"Yepo"}
-        };
+   // @DataProvider(name = "dp")
 
-    }
 }

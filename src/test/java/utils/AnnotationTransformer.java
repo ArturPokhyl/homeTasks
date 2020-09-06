@@ -12,5 +12,6 @@ public class AnnotationTransformer implements IAnnotationTransformer {
     @Override
     public void transform(ITestAnnotation iTestAnnotation, Class aClass, Constructor constructor, Method method) {
         iTestAnnotation.setRetryAnalyzer(RetryAnalyzer.class);
+        iTestAnnotation.setDataProvider(String.valueOf(DataProvidersBase.class));
     }
 }
