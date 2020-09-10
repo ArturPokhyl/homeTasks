@@ -1,5 +1,6 @@
 package test.java.homeTasks;
 
+import com.beust.jcommander.Parameter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -9,6 +10,7 @@ import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import test.java.utils.Screenshot;
 
 import java.net.MalformedURLException;
@@ -17,24 +19,37 @@ import java.util.concurrent.TimeUnit;
 
 public class HW_TestBaseSetup {
     WebDriver driver;
-
+    String chrome = "chrome";
+    String firefox = "firefox";
+    @Parameters({"browser"})
     @BeforeMethod
-    public void setUp(ITestContext testContext) {
+    public void setUp(ITestContext testContext, String browser) {
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
-        //FirefoxOptions options = new FirefoxOptions();
 
-        options.addArguments("--disable-notifications");
-       //driver = new ChromeDriver(options);
+        if (browser.equals(chrome)) {
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--disable-notifications");
+            try {
+                driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+            driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(1, TimeUnit.MILLISECONDS);
+            testContext.setAttribute("driver",driver);
 
-        try {
-            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
+        } else if (browser.equals(firefox)){
+            FirefoxOptions options = new FirefoxOptions();
+            try {
+                driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+            driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(1, TimeUnit.MILLISECONDS);
+            testContext.setAttribute("driver",driver);
         }
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(1, TimeUnit.MILLISECONDS);
-        testContext.setAttribute("driver",driver);
+
     }
 
     @AfterMethod
