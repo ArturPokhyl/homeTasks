@@ -22,13 +22,13 @@ public class TestBaseSetup {
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
-        FirefoxOptions ffOptions = new FirefoxOptions();
-        //driver = new ChromeDriver(options);
-        try {
+        //FirefoxOptions ffOptions = new FirefoxOptions();
+        driver = new ChromeDriver(options);
+        /*try {
             driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
         } catch (MalformedURLException e) {
             e.printStackTrace();
-        }
+        }*/
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.MILLISECONDS);
         testContext.setAttribute("driver",driver);

@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <suiteXmlFile>lesson6.xml</suiteXmlFile>
+        <suiteXmlFile>lesson11.xml</suiteXmlFile>
         <aspectj.version>1.8.10</aspectj.version>
     </properties>
 
