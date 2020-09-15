@@ -77,13 +77,16 @@ public class Waits {
             ));
         }
 
-        new WebDriverWait(driver, 15).until(new ExpectedCondition<Boolean>() {
+        wait.until(new ExpectedCondition<Boolean>() {
             @NullableDecl
             @Override
             public Boolean apply(@NullableDecl WebDriver driver) {
                 return driver.findElement(errorMsgBy).getText().contains("Пользователь с логином");
             }
         });
+
+        //wait.until( a -> a.findElement(errorMsgBy).getText().contains("Пользователь с логином"));
+
 
         //new WebDriverWait(driver, 15).until(d -> d.findElement(errorMsgBy).getText().contains("Пользователь с логином"));
 
