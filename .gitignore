@@ -4,3 +4,6 @@ target/
 *.exe
 logs/
 screenshots/
+src/test/resources/secure-config.properties
+allure-results/
+allure-report/
