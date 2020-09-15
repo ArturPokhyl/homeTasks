@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="FristSuite" parallel="classes" thread-count="2">
+    <parameter name="browser" value="chrome"/>
+    <listeners>
+        <listener class-name="test.java.utils.Listener"/>
+        <listener class-name="test.java.utils.AnnotationTransformer"></listener>
+    </listeners>
+    <test name="FirstTest">
+        <classes>
+            <class name="test.java.homeTasks.HW_Lesson13"/>
+        </classes>
+    </test>
+</suite>

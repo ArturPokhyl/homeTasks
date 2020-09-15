@@ -1,5 +1,6 @@
 package test.java.pages;
 
+import io.qameta.allure.Step;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -18,8 +19,8 @@ public class HomePage extends BasePage {
         this.driver = driver;
     }
 
-    public HomePage open() throws InterruptedException {
-        System.out.println();
+    @Step("Home page open")
+    public HomePage open() {
         this.logger.trace("Trace");
         this.logger.debug("Debug");
         this.logger.info("Info");
@@ -36,13 +37,17 @@ public class HomePage extends BasePage {
                 "}\n" +
                 "]\n");
         driver.get(PropertyLoader.loadProperty("baseurl"));
-        Thread.sleep(7000);
+        try {
+            Thread.sleep(7000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return this;
     }
 
     public HomePage clickContacts() {
         logger.info("Click contact page");
-       // System.out.println(1/0);
+        //System.out.println(1/0);
         WebElement contactBtn = driver.findElement(contactBtnBy);
         wait.until(ExpectedConditions.elementToBeClickable(contactBtnBy));
         contactBtn.click();

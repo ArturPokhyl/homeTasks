@@ -1,0 +1,13 @@
+docker run -it --rm ubuntu bash
+sudo apt update
+#sudo apt install docker
+#sudo apt  install docker.io -y
+#sudo apt install docker-compose -y
+sudo apt install curl
+curl -LO https://raw.githubusercontent.com/VladimirCW/docker-files/master/seleniumGrid.yml
+#curl -O seleniumGrid.yml  https://raw.githubusercontent.com/VladimirCW/docker-files/master/seleniumGrid.yml
+docker run -it --rm -p 4444:4444 -p 5900:5900 -e SCREEN_WIDTH=1920 -e SCREEN_HEIGHT=1080 selenium/standalone-chrome-debug
+sudo docker-compose -f seleniumGrid.yml up -d
+sudo docker-compose -f seleniumGrid.yml scale chrome=2
+sudo docker-compose -f seleniumGrid.yml down
+secret

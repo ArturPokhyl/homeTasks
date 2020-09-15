@@ -1,6 +1,10 @@
 package test.java.homeTasks;
 
 import com.beust.jcommander.Parameter;
+import io.qameta.allure.Attachment;
+import io.qameta.allure.Step;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -10,6 +14,7 @@ import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import test.java.utils.Screenshot;
 
@@ -23,7 +28,7 @@ public class HW_TestBaseSetup {
     String firefox = "firefox";
     @Parameters({"browser"})
     @BeforeMethod
-    public void setUp(ITestContext testContext, String browser) {
+    public void setUp(ITestContext testContext, @Optional("chrome") String browser) {
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
         if (browser.equals(chrome)) {
@@ -53,9 +58,16 @@ public class HW_TestBaseSetup {
     }
 
     @AfterMethod
-    public void teadDown(ITestResult result){
+    public void teadDown(ITestContext result){
         Screenshot screenshot = new Screenshot(driver);
-        screenshot.makeScreenshot(result);
+        //screenshot.makeScreenshot(result);
+        saveScreenshot(result);
         driver.quit();
+    }
+@Step("Make Screenshot")
+    @Attachment(value = "Page screenshot", type = "image/png")
+    public byte[] saveScreenshot(ITestContext testContext) {
+        WebDriver driver = (WebDriver) testContext.getAttribute("driver");
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 }

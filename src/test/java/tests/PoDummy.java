@@ -1,11 +1,16 @@
 package test.java.tests;
 
+import io.qameta.allure.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import test.java.pages.ContactPage;
 import test.java.pages.HomePage;
 import test.java.pages.QaPage;
 
+import static org.testng.Assert.assertTrue;
+
+@Epic("Epic first")
+@Feature("First feature")
 public class PoDummy extends TestBaseSetup{
     String expectedFontColor = "rgba(62, 119, 170, 1)";
     HomePage homePage;
@@ -19,12 +24,23 @@ public class PoDummy extends TestBaseSetup{
         qaPage = new QaPage(driver);
     }
 
-    @Test()
-    public void test1() throws InterruptedException {
+
+    @Story("BBB-1")
+    @Stories({
+           @Story("BBB-1-1"),
+           @Story("BBB-1-2")
+    })
+    @Severity(SeverityLevel.CRITICAL)
+    @Test
+    public void test1() {
+
+//        int i = 1;
+//        String a = Integer.toString(i); // "1"
+
         homePage
                 .open();
                 //.clickContacts();
-     /*   homePage
+        /*homePage
                 .open()
                 .clickContacts();
         contactPage.clickQa();
@@ -37,9 +53,8 @@ public class PoDummy extends TestBaseSetup{
                     String.format("Expected blue color for questuion '%s'", question.getText())
             );
         }*/
+        assertTrue(false);
     }
-
-
 
     public Object[][] dp() {
         return new Object[][]{
