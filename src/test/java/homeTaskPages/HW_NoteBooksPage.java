@@ -1,5 +1,6 @@
 package test.java.homeTaskPages;
 
+import io.qameta.allure.Step;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -28,6 +29,7 @@ public class HW_NoteBooksPage extends HW_BasePage{
 
        }
 
+@Step("do \"Open\"")
        public HW_NoteBooksPage open(){
            /*this.logger.trace("Page open trace");
            this.logger.debug("Page open debug");
@@ -39,7 +41,7 @@ public class HW_NoteBooksPage extends HW_BasePage{
         driver.get("https://rozetka.com.ua/notebooks/c80004/");
         return this;
        }
-
+    @Step("do \"clickToProducer\"")
        public HW_NoteBooksPage clickToProducer(String producer){
         /*   this.logger.trace("Page clickToProducer trace");
            this.logger.debug("Page clickToProducer debug");
@@ -52,7 +54,7 @@ public class HW_NoteBooksPage extends HW_BasePage{
         driver.findElement(producerXpath).click();
         return this;
        }
-
+    @Step("do \"getSearchResults\"")
         public List<WebElement> getSearchResults() {
        /*     this.logger.trace("Page getSearchResults trace");
             this.logger.debug("Page getSearchResults debug");

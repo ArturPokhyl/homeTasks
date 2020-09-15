@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import test.java.utils.PropertyLoader;
 
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class QaPage extends BasePage {
     @Override
     public QaPage open() {
         logger.info("QA page was opened");
-        driver.get("https://rozetka.com.ua/faq/");
+        driver.get(PropertyLoader.loadProperty("baseurl") + "faq/");
         return this;
     }
 
