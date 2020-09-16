@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="ApiTest">
+    <test name="ApiProjectTest">
+        <classes>
+            <class name="test.java.homeTasks.apiTests.HW_lesson15_Project">
+                <methods>
+                    <include name="createProject"/>
+                    <include name="updateProject"/>
+                    <include name="readProject"/>
+                    <include name="deleteProject"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ApiTaskTest">
+        <classes>
+            <class name="test.java.homeTasks.apiTests.HW_lesson15_Task">
+                <methods>
+                    <include name="createTask"/>
+                    <include name="updateTask"/>
+                    <include name="readTask"/>
+                    <include name="deleteTask"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
